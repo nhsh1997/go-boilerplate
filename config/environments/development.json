@@ -1,0 +1,9 @@
+{
+  "web": {
+    "port": 4000,
+    "read_timeout": 10,
+    "write_timeout": 10
+  },
+  "debug": "stinger",
+  "authSecret": "nhsh1997@gmail.com"
+}

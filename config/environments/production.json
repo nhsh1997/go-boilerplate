@@ -1,0 +1,7 @@
+{
+  "web": {
+    "port": 3000
+  },
+  "debug": "stinger",
+  "authSecret": "nhsh1997@gmail.com"
+}
