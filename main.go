@@ -1,7 +1,7 @@
 package main
 
 import (
-	Application "image-review/src/app"
+	types "image-review/src"
 	"image-review/src/infra/ioc"
 )
 
@@ -9,7 +9,7 @@ import (
 func main() {
 	container := ioc.BuildContainer()
 
-	err := container.Invoke(func(app *Application.Application) {
+	err := container.Invoke(func(app types.IApplication) {
 		app.Start()
 	})
 

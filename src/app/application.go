@@ -9,7 +9,7 @@ type Application struct {
 
 }
 
-func NewApplication (server types.IServer) *Application {
+func NewApplication (server types.IServer) types.IApplication {
 	return &Application{
 		Server: server,
 	}
