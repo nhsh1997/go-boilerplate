@@ -1,21 +1,31 @@
 package auth
 
 import (
+	"fmt"
+	types "image-review/src"
 	users "image-review/src/domain/user"
-	"image-review/src/infra/utils"
 )
 
 type GenerateTokenWorkFlow struct {
-	jwtHelper *utils.JwtHelper
-	userRepository *users.Repository
+	jwtHelper types.IJwtHelper
+	userRepository users.Repository
 }
 
-func NewGenerateTokenWorkFlow (helper *utils.JwtHelper, repository *users.Repository) *GenerateTokenWorkFlow{
+func NewGenerateTokenWorkFlow (helper types.IJwtHelper, repository users.Repository) *GenerateTokenWorkFlow{
 	return &GenerateTokenWorkFlow{
 		jwtHelper:      helper,
 		userRepository: repository,
 	}
 }
 
-func (g *GenerateTokenWorkFlow) Execute() {
+func (g *GenerateTokenWorkFlow) Execute(credential *users.User) error {
+	user, err := g.userRepository.FindByEmail(credential.Email)
+
+	if user != nil {
+		return fmt.Errorf("%s already exists", credential.Email)
+	}
+	if err != nil {
+		return err
+	}
+	return nil
 }

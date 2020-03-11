@@ -1,13 +1,15 @@
 package apps
 
-import servers "image-review/src/interface/http"
+import (
+	types "image-review/src"
+)
 
 type Application struct {
-	Server *servers.Server
+	Server types.IServer
 
 }
 
-func NewApplication (server *servers.Server) *Application {
+func NewApplication (server types.IServer) *Application {
 	return &Application{
 		Server: server,
 	}

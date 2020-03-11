@@ -4,6 +4,7 @@ import (
 	"fmt"
 	configs "image-review/config"
 	jwt "github.com/dgrijalva/jwt-go"
+	types "image-review/src"
 )
 
 type JwtHelper struct {
@@ -11,7 +12,7 @@ type JwtHelper struct {
 
 }
 
-func NewJwtHelper(config configs.Configuration) *JwtHelper{
+func NewJwtHelper(config configs.Configuration) types.IJwtHelper{
 	return &JwtHelper{
 		SecretKey: config.AuthSecret,
 	}

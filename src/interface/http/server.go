@@ -3,6 +3,7 @@ package servers
 import (
 	"fmt"
 	Configuration "image-review/config"
+	types "image-review/src"
 	"net/http"
 	"time"
 )
@@ -16,7 +17,7 @@ type Server struct {
 	MainRouter *MainRouter
 }
 
-func NewServer (config *Configuration.Configuration, router *MainRouter) *Server {
+func NewServer (config *Configuration.Configuration, router *MainRouter) types.IServer {
 	return &Server{
 		Port: config.Web.Port,
 		ReadTimeout: config.Web.ReadTimeout,
