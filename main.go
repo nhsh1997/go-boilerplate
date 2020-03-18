@@ -2,7 +2,7 @@ package main
 
 import (
 	types "go-boilerplate/src"
-	"go-boilerplate/src/infra/ioc"
+	"go-boilerplate/src/infrastructure/ioc"
 )
 
 

@@ -3,8 +3,8 @@ package ioc
 import (
 	configs "go-boilerplate/config"
 	apps "go-boilerplate/src"
-	dbs "go-boilerplate/src/infra/db"
-	"go-boilerplate/src/infra/utils/jwt-helper"
+	dbs "go-boilerplate/src/infrastructure/db"
+	"go-boilerplate/src/infrastructure/utils/jwt-helper"
 	servers "go-boilerplate/src/interface/http"
 	user_apis "go-boilerplate/src/interface/http/api/user"
 	"go.uber.org/dig"
