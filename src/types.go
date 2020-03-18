@@ -1,6 +1,4 @@
-package types
-
-import "github.com/dgrijalva/jwt-go"
+package apps
 
 type IServer interface  {
 	Start()
@@ -65,10 +63,6 @@ func (s SortDirection) String() string {
 	return [...]string{"asc", "desc"}[s]
 }
 
-type IJwtHelper interface {
-	SignIn(payload jwt.MapClaims) (string, error)
-	Verify(tokenString string)
-}
 
 
 type ISort struct {

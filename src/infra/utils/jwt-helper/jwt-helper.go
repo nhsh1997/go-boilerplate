@@ -1,18 +1,23 @@
-package utils
+package jwt_helper
 
 import (
 	"fmt"
-	configs "image-review/config"
-	jwt "github.com/dgrijalva/jwt-go"
-	types "image-review/src"
+	"github.com/dgrijalva/jwt-go"
+	configs "go-boilerplate/config"
 )
+
+
+type IJwtHelper interface {
+	SignIn(payload jwt.MapClaims) (string, error)
+	Verify(tokenString string)
+}
 
 type JwtHelper struct {
 	SecretKey string
 
 }
 
-func NewJwtHelper(config configs.Configuration) types.IJwtHelper{
+func NewJwtHelper(config configs.Configuration) IJwtHelper{
 	return &JwtHelper{
 		SecretKey: config.AuthSecret,
 	}

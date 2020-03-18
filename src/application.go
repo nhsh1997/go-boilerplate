@@ -1,15 +1,10 @@
 package apps
 
-import (
-	types "image-review/src"
-)
-
 type Application struct {
-	Server types.IServer
-
+	Server IServer
 }
 
-func NewApplication (server types.IServer) types.IApplication {
+func NewApplication (server IServer) IApplication {
 	return &Application{
 		Server: server,
 	}

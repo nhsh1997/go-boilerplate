@@ -1,8 +1,8 @@
-package user
+package user_mongo_repositories
 
 import (
 	"github.com/juju/mgosession"
-	users "image-review/src/domain/user"
+	users "go-boilerplate/src/domain/user"
 )
 
 type repo struct {

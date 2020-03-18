@@ -1,24 +1,24 @@
-package auth
+package auth_workflows
 
 import (
 	"fmt"
-	types "image-review/src"
-	users "image-review/src/domain/user"
+	user_domain "go-boilerplate/src/domain/user"
+	jwt_helper "go-boilerplate/src/infra/utils/jwt-helper"
 )
 
 type GenerateTokenWorkFlow struct {
-	jwtHelper types.IJwtHelper
-	userRepository users.Repository
+	jwtHelper jwt_helper.IJwtHelper
+	userRepository user_domain.Repository
 }
 
-func NewGenerateTokenWorkFlow (helper types.IJwtHelper, repository users.Repository) *GenerateTokenWorkFlow{
+func NewGenerateTokenWorkFlow (helper jwt_helper.IJwtHelper, repository user_domain.Repository) *GenerateTokenWorkFlow{
 	return &GenerateTokenWorkFlow{
 		jwtHelper:      helper,
 		userRepository: repository,
 	}
 }
 
-func (g *GenerateTokenWorkFlow) Execute(credential *users.User) error {
+func (g *GenerateTokenWorkFlow) Execute(credential *user_domain.User) error {
 	user, err := g.userRepository.FindByEmail(credential.Email)
 
 	if user != nil {

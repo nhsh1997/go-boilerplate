@@ -2,7 +2,7 @@ package servers
 
 import (
 	"fmt"
-	photos "image-review/src/interface/http/api/photo"
+	user_apis "go-boilerplate/src/interface/http/api/user"
 	"net/http"
 	"github.com/gorilla/mux"
 )
@@ -11,14 +11,16 @@ type MainRouter struct {
 	Router *mux.Router
 }
 
-func NewMainRouter(photoRouter *photos.Router) *MainRouter {
+func NewMainRouter(
+	userRouter *user_apis.Router,
+	) *MainRouter {
 	mainRouter := mux.NewRouter()
 
 	mainRouter.HandleFunc("/", homePage)
 
 	apiRouter := mainRouter.PathPrefix("/api").Subrouter()
 
-	photoRouter.MakePhotoHandler(apiRouter)
+	userRouter.MakeUserHandler(apiRouter)
 
 	return &MainRouter{
 		mainRouter,

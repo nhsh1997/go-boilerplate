@@ -1,4 +1,4 @@
-package photos
+package user_apis
 
 import (
 	"fmt"
@@ -9,13 +9,12 @@ import (
 type Router struct {
 }
 
-func (r Router) MakePhotoHandler(mainRouter *mux.Router) {
-	photoRouter := mainRouter.PathPrefix("/photos").Subrouter()
-	photoRouter.HandleFunc("/", homePage1)
-	photoRouter.HandleFunc("/upload", homePage2)
+func (r Router) MakeUserHandler(mainRouter *mux.Router) {
+	router := mainRouter.PathPrefix("/users").Subrouter()
+	router.HandleFunc("/", homePage1)
 }
 
-func NewPhotoRouter() *Router {
+func NewUserRouter() *Router {
 	return &Router{
 	}
 }

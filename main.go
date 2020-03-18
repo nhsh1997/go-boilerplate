@@ -1,8 +1,8 @@
 package main
 
 import (
-	types "image-review/src"
-	"image-review/src/infra/ioc"
+	types "go-boilerplate/src"
+	"go-boilerplate/src/infra/ioc"
 )
 
 

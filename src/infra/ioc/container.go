@@ -1,25 +1,27 @@
 package ioc
 
 import (
+	configs "go-boilerplate/config"
+	apps "go-boilerplate/src"
+	dbs "go-boilerplate/src/infra/db"
+	"go-boilerplate/src/infra/utils/jwt-helper"
+	servers "go-boilerplate/src/interface/http"
+	user_apis "go-boilerplate/src/interface/http/api/user"
 	"go.uber.org/dig"
-	configs "image-review/config"
-	apps "image-review/src/app"
-	dbs "image-review/src/infra/db"
-	"image-review/src/infra/utils"
-	servers "image-review/src/interface/http"
-	Photo "image-review/src/interface/http/api/photo"
 )
 
 func BuildContainer() *dig.Container {
 	container := dig.New()
 
 	container.Provide(configs.NewConfig)
-	container.Provide(utils.NewJwtHelper)
-	container.Provide(Photo.NewPhotoRouter)
+	container.Provide(jwt_helper.NewJwtHelper)
 	container.Provide(servers.NewMainRouter)
 	container.Provide(servers.NewServer)
 	container.Provide(dbs.NewMongoDBClient)
 	container.Provide(apps.NewApplication)
+
+	//Apis
+	container.Provide(user_apis.NewUserRouter)
 
 	return container
 }

@@ -3,9 +3,9 @@ package dbs
 import (
 	"context"
 	"fmt"
+	configs "go-boilerplate/config"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	configs "image-review/config"
 	"log"
 )
 type MongoDBClient struct {

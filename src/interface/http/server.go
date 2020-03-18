@@ -2,8 +2,8 @@ package servers
 
 import (
 	"fmt"
-	Configuration "image-review/config"
-	types "image-review/src"
+	configs "go-boilerplate/config"
+	types "go-boilerplate/src"
 	"net/http"
 	"time"
 )
@@ -17,7 +17,7 @@ type Server struct {
 	MainRouter *MainRouter
 }
 
-func NewServer (config *Configuration.Configuration, router *MainRouter) types.IServer {
+func NewServer (config *configs.Configuration, router *MainRouter) types.IServer {
 	return &Server{
 		Port: config.Web.Port,
 		ReadTimeout: config.Web.ReadTimeout,
@@ -28,7 +28,7 @@ func NewServer (config *Configuration.Configuration, router *MainRouter) types.I
 
 func (server *Server) Start() {
 	conn := fmt.Sprintf(":%d", server.Port)
-	fmt.Print(conn)
+	fmt.Print("Server run on port" + conn)
 
 	server.HttpServer = &http.Server{
 		Addr:           conn,
