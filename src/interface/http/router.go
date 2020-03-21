@@ -2,9 +2,9 @@ package servers
 
 import (
 	"fmt"
-	user_apis "go-boilerplate/src/interface/http/api/user"
-	"net/http"
 	"github.com/gorilla/mux"
+	"go-boilerplate/src/interface/http/api/user/users_router"
+	"net/http"
 )
 
 type MainRouter struct {
@@ -12,7 +12,7 @@ type MainRouter struct {
 }
 
 func NewMainRouter(
-	userRouter *user_apis.Router,
+	userRouter *users_router.Router,
 	) *MainRouter {
 	mainRouter := mux.NewRouter()
 
