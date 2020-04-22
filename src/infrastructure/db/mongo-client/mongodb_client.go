@@ -3,7 +3,7 @@ package mongo_client
 import (
 	"context"
 	"fmt"
-	configs "go-boilerplate/config"
+	configs "github.com/nhsh1997/go-boilerplate/config"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"

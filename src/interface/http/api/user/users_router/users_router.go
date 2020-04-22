@@ -2,7 +2,7 @@ package users_router
 
 import (
 	"github.com/gorilla/mux"
-	"go-boilerplate/src/interface/http/api/user/users_controller"
+	"github.com/nhsh1997/go-boilerplate/src/interface/http/api/user/users_controller"
 )
 
 type Router struct {

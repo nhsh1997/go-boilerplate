@@ -2,8 +2,8 @@ package generate_token
 
 import (
 	"fmt"
-	user_domain "go-boilerplate/src/domain/user"
-	jwt_helper "go-boilerplate/src/infrastructure/utils/jwt_helper"
+	user_domain "github.com/nhsh1997/go-boilerplate/src/domain/user"
+	jwt_helper "github.com/nhsh1997/go-boilerplate/src/infrastructure/utils/jwt_helper"
 )
 
 type GenerateTokenWorkFlow struct {

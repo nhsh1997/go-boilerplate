@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"github.com/sirupsen/logrus"
+	_ "github.com/sirupsen/logrus"
 )
 
 type LEVEL int

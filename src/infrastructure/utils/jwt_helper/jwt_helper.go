@@ -3,7 +3,7 @@ package jwt_helper
 import (
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
-	configs "go-boilerplate/config"
+	configs "github.com/nhsh1997/go-boilerplate/config"
 )
 
 

@@ -1,11 +1,11 @@
 package ioc
 
 import (
-	configs "go-boilerplate/config"
-	apps "go-boilerplate/src"
-	"go-boilerplate/src/infrastructure/db/mongo-client"
-	"go-boilerplate/src/infrastructure/utils/jwt_helper"
-	servers "go-boilerplate/src/interface/http"
+	configs "github.com/nhsh1997/go-boilerplate/config"
+	apps "github.com/nhsh1997/go-boilerplate/src"
+	"github.com/nhsh1997/go-boilerplate/src/infrastructure/db/mongo-client"
+	"github.com/nhsh1997/go-boilerplate/src/infrastructure/utils/jwt_helper"
+	servers "github.com/nhsh1997/go-boilerplate/src/interface/http"
 	"go.uber.org/dig"
 )
 

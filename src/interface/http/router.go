@@ -3,7 +3,7 @@ package servers
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	"go-boilerplate/src/interface/http/api/user/users_router"
+	"github.com/nhsh1997/go-boilerplate/src/interface/http/api/user/users_router"
 	"net/http"
 )
 

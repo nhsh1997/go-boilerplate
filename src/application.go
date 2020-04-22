@@ -1,10 +1,16 @@
 package apps
 
+import servers "github.com/nhsh1997/go-boilerplate/src/interface/http"
+
 type Application struct {
-	Server IServer
+	Server servers.IServer
 }
 
-func NewApplication (server IServer) IApplication {
+type IApplication interface {
+	Start()
+}
+
+func NewApplication (server servers.IServer) IApplication {
 	return &Application{
 		Server: server,
 	}

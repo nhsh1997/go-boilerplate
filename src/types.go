@@ -1,17 +1,12 @@
 package apps
 
-type IServer interface  {
-	Start()
-	Stop()
-}
+
 
 type ILogger interface {
 
 }
 
-type IApplication interface {
-	Start()
-}
+
 
 /*type IRepository interface {
 paginate(criteria: ICriteria): Promise<IPaginateResult<Entity>>;

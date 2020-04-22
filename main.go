@@ -1,8 +1,8 @@
 package main
 
 import (
-	types "go-boilerplate/src"
-	"go-boilerplate/src/infrastructure/ioc"
+	types "github.com/nhsh1997/go-boilerplate/src"
+	"github.com/nhsh1997/go-boilerplate/src/infrastructure/ioc"
 )
 
 

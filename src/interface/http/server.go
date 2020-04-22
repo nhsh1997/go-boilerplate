@@ -2,8 +2,7 @@ package servers
 
 import (
 	"fmt"
-	configs "go-boilerplate/config"
-	types "go-boilerplate/src"
+	configs "github.com/nhsh1997/go-boilerplate/config"
 	"net/http"
 	"time"
 )
@@ -17,7 +16,12 @@ type Server struct {
 	MainRouter *MainRouter
 }
 
-func NewServer (config *configs.Configuration, router *MainRouter) types.IServer {
+type IServer interface  {
+	Start()
+	Stop()
+}
+
+func NewServer (config *configs.Configuration, router *MainRouter) IServer {
 	return &Server{
 		Port: config.Web.Port,
 		ReadTimeout: config.Web.ReadTimeout,
