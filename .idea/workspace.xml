@@ -2,29 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30445d3d-27df-4113-8a93-bf2199302081" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/go-boilerplate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-boilerplate.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/application.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/db/mongo-client/mongodb_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/db/mongo-client/mongodb_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/ioc/container.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/ioc/container.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/ioc/inject_deliveries.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/ioc/inject_deliveries.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/utils/jwt_helper/jwt_helper.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/utils/jwt_helper/jwt_helper.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/utils/logger/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/utils/logger/logger.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/http/api/user/users_router/users_router.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/http/api/user/users_router/users_router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/http/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/http/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/http/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/http/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usecase/auth/generate-token/generate-token.usecase.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/usecase/auth/generate-token/generate-token.usecase.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="GOROOT" path="C:\Users\DELL\go\go1.14.2" />
+  <component name="GOROOT" path="C:\Users\USER\sdk\go1.14.2" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -37,13 +24,40 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bookstore_users-api" />
+    <property name="settings.editor.selected.configurable" value="go.sdk" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Go_Modules_(vgo)" timestamp="1587541645091">
