@@ -11,6 +11,7 @@ type Router struct {
 
 func (r Router) MakeUserHandler(mainRouter *mux.Router) {
 	router := mainRouter.PathPrefix("/users").Subrouter()
+	router.HandleFunc("", r.controller.HomePage1)
 	router.HandleFunc("/", r.controller.HomePage1)
 }
 

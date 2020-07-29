@@ -17,6 +17,7 @@ var(
 func BuildContainer() *dig.Container {
 
 	inject_deliveries()
+	inject_workflows()
 
 	container.Provide(configs.NewConfig)
 	container.Provide(jwt_helper.NewJwtHelper)

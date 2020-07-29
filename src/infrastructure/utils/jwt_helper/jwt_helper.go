@@ -17,7 +17,7 @@ type JwtHelper struct {
 
 }
 
-func NewJwtHelper(config configs.Configuration) IJwtHelper{
+func NewJwtHelper(config *configs.Configuration) IJwtHelper{
 	return &JwtHelper{
 		SecretKey: config.AuthSecret,
 	}

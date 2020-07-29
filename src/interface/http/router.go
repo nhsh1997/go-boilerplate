@@ -3,6 +3,7 @@ package servers
 import (
 	"fmt"
 	"github.com/gorilla/mux"
+	"github.com/nhsh1997/go-boilerplate/src/interface/http/api/auth/auth_router"
 	"github.com/nhsh1997/go-boilerplate/src/interface/http/api/user/users_router"
 	"net/http"
 )
@@ -13,6 +14,7 @@ type MainRouter struct {
 
 func NewMainRouter(
 	userRouter *users_router.Router,
+	authRouter *auth_router.Router,
 	) *MainRouter {
 	mainRouter := mux.NewRouter()
 
@@ -21,6 +23,7 @@ func NewMainRouter(
 	apiRouter := mainRouter.PathPrefix("/api").Subrouter()
 
 	userRouter.MakeUserHandler(apiRouter)
+	authRouter.MakeUserHandler(apiRouter)
 
 	return &MainRouter{
 		mainRouter,
