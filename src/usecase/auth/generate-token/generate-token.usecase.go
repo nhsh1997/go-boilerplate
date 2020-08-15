@@ -1,11 +1,13 @@
 package generate_token
 
 import (
+	rest_errors "github.com/nhsh1997/go-boilerplate/src/infrastructure/utils/error"
 	jwt_helper "github.com/nhsh1997/go-boilerplate/src/infrastructure/utils/jwt_helper"
+	"time"
 )
 
 type IGenerateTokenWorkFlow interface {
-	Execute(string) (string, error)
+	Execute(GenerateTokenWorkflowInput) (*GenerateTokenWorkflowOutput, error)
 }
 
 type GenerateTokenWorkFlow struct {
@@ -20,7 +22,7 @@ func NewGenerateTokenWorkFlow (helper jwt_helper.IJwtHelper/*, repository user_d
 	}
 }
 
-func (g *GenerateTokenWorkFlow) Execute(email string) (string, error) {
+func (g *GenerateTokenWorkFlow) Execute(credential GenerateTokenWorkflowInput) (*GenerateTokenWorkflowOutput, error) {
 	/*user, err := g.userRepository.FindByEmail(credential.Email)
 
 	if user != nil {
@@ -29,5 +31,12 @@ func (g *GenerateTokenWorkFlow) Execute(email string) (string, error) {
 	if err != nil {
 		return err
 	}*/
-	return email, nil
+
+	if credential.Email != "nhsh1997@gmail.com" {
+		return nil, rest_errors.NewBadRequestError("Email is wrong!")
+	}
+	return &GenerateTokenWorkflowOutput{
+		Token:     "Hello",
+		ExpiresIn: time.Time{},
+	}, nil
 }

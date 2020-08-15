@@ -3,48 +3,61 @@ package auth_controller
 import (
 	"encoding/json"
 	"fmt"
+	rest_errors "github.com/nhsh1997/go-boilerplate/src/infrastructure/utils/error"
 	generate_token "github.com/nhsh1997/go-boilerplate/src/usecase/auth/generate-token"
 	"net/http"
 )
 
 type IAuthController interface {
-	GetToken(http.ResponseWriter, *http.Request)
-	VerifyToken(http.ResponseWriter, *http.Request)
+	GetToken(http.ResponseWriter, *http.Request) error
+	VerifyToken(http.ResponseWriter, *http.Request) error
 }
 
 type AuthController struct {
 	generateTokenWorkFlow generate_token.IGenerateTokenWorkFlow
 }
 
-func (c *AuthController) VerifyToken(res http.ResponseWriter, req *http.Request) {
-	fmt.Fprint(res, "VerifyToken")
+func (c *AuthController) VerifyToken(res http.ResponseWriter, req *http.Request) error {
+	return nil
 }
 
-func NewAuthController( generateToken generate_token.IGenerateTokenWorkFlow) IAuthController  {
+func NewAuthController( generateToken generate_token.IGenerateTokenWorkFlow) IAuthController {
 	return &AuthController{
 		generateTokenWorkFlow: generateToken,
 	}
 }
 
-func (c *AuthController) GetToken(res http.ResponseWriter, req *http.Request) {
-	var p struct{
-		Email string `json:"email"`
+func handleError(err error, res http.ResponseWriter){
+	if err != nil {
+		switch err.(type) {
+		case *rest_errors.RestError:
+			err := err.(*rest_errors.RestError)
+			http.Error(res, err.Message, err.Status)
+		default:
+			err := rest_errors.NewInternalServerError(`The server failed to handle this request`, err)
+			http.Error(res, err.Message, err.Status)
+		}
+	}
+}
+
+func (c *AuthController) GetToken(res http.ResponseWriter, req *http.Request) error {
+	var credential generate_token.GenerateTokenWorkflowInput
+
+	err := json.NewDecoder(req.Body).Decode(&credential)
+
+	if err != nil {
+		return err
 	}
 
-	// Try to decode the request body into the struct. If there is an error,
-	// respond to the client with the error message and a 400 status code.
-	err := json.NewDecoder(req.Body).Decode(&p)
+	result, err := c.generateTokenWorkFlow.Execute(credential)
+
 	if err != nil {
-		http.Error(res, err.Error(), http.StatusBadRequest)
-		return
-	}
-	fmt.Println(p)
-	result, err := c.generateTokenWorkFlow.Execute(p.Email)
-	if err != nil {
-		fmt.Fprint(res, "Error")
+		return err
 	}
 
-	fmt.Fprint(res, result)
+	json.NewEncoder(res).Encode(result)
+
+	return nil
 }
 
 func homePage2(res http.ResponseWriter, req http.Request) {

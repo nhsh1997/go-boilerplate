@@ -23,7 +23,7 @@ func NewMainRouter(
 	apiRouter := mainRouter.PathPrefix("/api").Subrouter()
 
 	userRouter.MakeUserHandler(apiRouter)
-	authRouter.MakeUserHandler(apiRouter)
+	authRouter.MakeAuthHandler(apiRouter)
 
 	return &MainRouter{
 		mainRouter,

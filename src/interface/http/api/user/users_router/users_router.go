@@ -9,6 +9,7 @@ type Router struct {
 	controller users_controller.IUserController
 }
 
+
 func (r Router) MakeUserHandler(mainRouter *mux.Router) {
 	router := mainRouter.PathPrefix("/users").Subrouter()
 	router.HandleFunc("", r.controller.HomePage1)
