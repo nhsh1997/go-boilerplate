@@ -3,7 +3,7 @@ package user_domain
 import "time"
 
 type User struct {
-	ID  int64  `json:"id"`
+	ID  int  `json:"id"`
 	FirstName string `json:"first_name"`
 	LastName string `json:"last_name"`
 	Email string `json:"email"`
@@ -14,7 +14,7 @@ type User struct {
 	CreatedAt time.Time `json:"created_at"`
 }
 
-func NewUser(id int64, firstName, lastName, email, password string, isSuperAdmin bool, status int16) *User{
+func NewUser(id int, firstName, lastName, email, password string, isSuperAdmin bool, status int16) *User{
 	return &User{
 		ID: id,
 		FirstName: firstName,
