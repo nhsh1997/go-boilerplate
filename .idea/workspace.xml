@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30445d3d-27df-4113-8a93-bf2199302081" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/db/models/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/db/postgresql/postgres_client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/ioc/inject_repositories.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/repositories/postgres/user/postgres_user_mapper.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/repositories/postgres/user/postgres_user_repository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/user_entity.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/user_entity.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/user_repository_interface.ts.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/user_repository_interface.ts.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/db/ent/generate.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/db/ent/schema/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/ioc/container.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/ioc/container.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/db/postgresql/postgres_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/db/postgresql/postgres_client.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/usecase/auth/generate-token/generate-token.usecase.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/usecase/auth/generate-token/generate-token.usecase.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

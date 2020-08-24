@@ -6,6 +6,7 @@ import (
 	configs "github.com/nhsh1997/go-boilerplate/config"
 	"github.com/nhsh1997/go-boilerplate/ent"
 	"log"
+	_ "github.com/lib/pq"
 )
 
 type PostgreClient struct {

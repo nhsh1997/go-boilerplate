@@ -32,7 +32,7 @@ func (g *GenerateTokenWorkFlow) Execute(credential GenerateTokenWorkflowInput) (
 	user, err := g.userRepository.FindByEmail(credential.Email)
 
 	if err != nil {
-		return nil, rest_errors.NewNotFoundError("cannot found user with email: " + credential.Email)
+		return nil, rest_errors.NewNotFoundError("User isn't exist")
 	}
 
 	return &GenerateTokenWorkflowOutput{
