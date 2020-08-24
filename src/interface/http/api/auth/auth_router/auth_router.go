@@ -5,7 +5,7 @@ import (
 	"github.com/nhsh1997/go-boilerplate/src/interface/http/api/auth/auth_controller"
 	"net/http"
 
-	middlewares "github.com/nhsh1997/go-boilerplate/src/interface/http/middlewares"
+	"github.com/nhsh1997/go-boilerplate/src/interface/http/middlewares"
 )
 
 type Router struct {
@@ -14,8 +14,8 @@ type Router struct {
 
 func (r Router) MakeAuthHandler(mainRouter *mux.Router) {
 	router := mainRouter.PathPrefix("/auth").Subrouter()
-	router.Handle("/token", middlewares.ErrorHandler(r.controller.GetToken)).Methods(http.MethodPost)
-	router.Handle("/verifyToken", middlewares.ErrorHandler(r.controller.VerifyToken))
+	router.Handle("/token", middlewares.Interceptor(r.controller.GetToken)).Methods(http.MethodPost)
+	router.Handle("/verifyToken", middlewares.Interceptor(r.controller.VerifyToken))
 }
 
 func NewAuthRouter(controller auth_controller.IAuthController) *Router {
